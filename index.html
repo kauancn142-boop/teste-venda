@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Nascimento Vendas — componentes industriais e agrícolas. Solicite seu orçamento.">
+  <title>Nascimento Vendas | Peças Industriais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#inicio">
+      <span class="logo-icon">N<span>.</span></span>
+      <span>NASCIMENTO<small>VENDAS</small></span>
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-label="Abrir menu">☰</button>
+
+    <nav id="menu">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">A empresa</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contato">Contato</a>
+      <a class="nav-button" href="#catalogo">Ver produtos ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">COMPONENTES INDUSTRIAIS E AGRÍCOLAS</p>
+        <h1>Peças certas.<br><span>Resultado de verdade.</span></h1>
+        <p class="hero-description">
+          Componentes para quem precisa de resistência, precisão e confiança
+          no dia a dia.
+        </p>
+        <a class="button button-red" href="#catalogo">EXPLORAR CATÁLOGO ↗</a>
+
+        <div class="hero-details">
+          <span>01 — Atendimento direto</span>
+          <span>02 — Orçamento personalizado</span>
+          <span>03 — Peças sob consulta</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="sobre">
+      <div>
+        <p class="eyebrow">QUEM SOMOS</p>
+        <h2>Conhecimento técnico.<br><span>Atendimento próximo.</span></h2>
+      </div>
+      <div class="about-text">
+        <p>
+          A Nascimento Vendas trabalha com componentes para aplicações
+          industriais e agrícolas, ajudando você a encontrar a peça adequada
+          para seu equipamento.
+        </p>
+        <p>
+          Consulte modelos, medidas e disponibilidade diretamente com nossa
+          equipe.
+        </p>
+        <a class="text-link" href="#contato">FALE COM A GENTE ↗</a>
+      </div>
+    </section>
+
+    <section class="catalog section" id="catalogo">
+      <p class="eyebrow">NOSSO CATÁLOGO</p>
+      <h2>Encontre sua <span>peça.</span></h2>
+      <p class="section-description">
+        Pesquise os produtos e peça seu orçamento pelo WhatsApp.
+      </p>
+
+      <div class="filters">
+        <input id="search" type="search" placeholder="Buscar produto...">
+        <select id="category">
+          <option value="">Todas as categorias</option>
+          <option value="Acoplamentos">Acoplamentos</option>
+          <option value="Mancais">Mancais</option>
+          <option value="Polias">Polias</option>
+          <option value="Roletes">Roletes</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="no-results" id="noResults" hidden>Nenhum produto encontrado.</p>
+
+      <div class="catalog-footer">
+        <p>Não encontrou o que procura?</p>
+        <a class="button button-black" id="generalQuote" href="#">SOLICITAR ORÇAMENTO ↗</a>
+      </div>
+    </section>
+
+    <section class="red-banner">
+      <div>
+        <p class="eyebrow light">PRECISA DE AJUDA?</p>
+        <h2>Vamos encontrar a peça<br>ideal para você.</h2>
+      </div>
+      <a class="button button-white" id="bannerQuote" href="#">PEDIR ORÇAMENTO ↗</a>
+    </section>
+
+    <section class="contact section" id="contato">
+      <div>
+        <p class="eyebrow">FALE CONOSCO</p>
+        <h2>Atendimento direto,<br><span>sem complicação.</span></h2>
+        <p class="section-description">
+          Envie o modelo, as medidas ou uma foto da peça que você precisa.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-symbol">↗</div>
+        <div>
+          <small>ORÇAMENTOS E INFORMAÇÕES</small>
+          <h3>WhatsApp</h3>
+          <p>Converse com a Nascimento Vendas.</p>
+          <a class="text-link" id="contactQuote" href="#">INICIAR CONVERSA ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <a class="logo footer-logo" href="#inicio">
+        <span class="logo-icon">N<span>.</span></span>
+        <span>NASCIMENTO<small>VENDAS</small></span>
+      </a>
+      <p>Componentes industriais e agrícolas.<br>Orçamento personalizado.</p>
+      <div class="footer-links">
+        <a href="#inicio">Início</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Nascimento Vendas.</span>
+      <span>Consulte modelos e disponibilidade.</span>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" id="floatingQuote" href="#" aria-label="Pedir orçamento pelo WhatsApp" target="_blank" rel="noopener">
+    <span>◉</span> Orçamento
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --black: #111111;
+  --red: #c62828;
+  --white: #ffffff;
+  --gray: #6c6c6c;
+  --light: #f3f3f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  color: var(--black);
+  font-family: Inter, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 82px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  background: var(--black);
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 30px;
+}
+
+.logo-icon span {
+  color: var(--red);
+}
+
+.logo small {
+  display: block;
+  margin-top: 4px;
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+nav a:hover,
+.footer-links a:hover {
+  color: var(--red);
+}
+
+.nav-button {
+  padding: 14px 18px;
+  background: var(--red);
+  color: white;
+}
+
+.menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 610px;
+  padding: 75px 8%;
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(12,12,12,.97), rgba(12,12,12,.78), rgba(12,12,12,.4)),
+    url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero .eyebrow,
+.light {
+  color: white;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: clamp(54px, 8vw, 94px);
+  line-height: .93;
+}
+
+h1 span,
+h2 span {
+  color: var(--red);
+}
+
+.hero-description {
+  max-width: 500px;
+  color: #d0d0d0;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: 800;
+  transition: transform .2s, background .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-red {
+  margin-top: 18px;
+  background: var(--red);
+  color: white;
+}
+
+.button-red:hover {
+  background: #a91e1e;
+}
+
+.hero-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 55px;
+  color: #ddd;
+  font-size: 10px;
+}
+
+.hero-details span::first-letter {
+  color: var(--red);
+}
+
+.section {
+  padding: 90px 8%;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 65px;
+  background: var(--light);
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1;
+}
+
+.about-text {
+  padding-top: 20px;
+}
+
+.about-text p,
+.section-description {
+  color: var(--gray);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--red);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.catalog {
+  background: white;
+}
+
+.catalog h2 {
+  margin-bottom: 12px;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.filters input,
+.filters select {
+  min-height: 45px;
+  padding: 0 13px;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background: white;
+  font: inherit;
+  font-size: 12px;
+}
+
+.filters input {
+  flex: 1;
+  min-width: 0;
+}
+
+.filters select {
+  width: 210px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.product-card {
+  min-width: 0;
+  border: 1px solid #e5e5e5;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px #00000012;
+}
+
+.product-image {
+  position: relative;
+  height: 190px;
+  background: #f0f0ee;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 7px 9px;
+  background: var(--red);
+  color: white;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.product-info {
+  padding: 17px 14px;
+}
+
+.product-info h3 {
+  margin: 0 0 9px;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.product-info p {
+  min-height: 42px;
+  color: var(--gray);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.product-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 13px;
+  border-top: 1px solid #eee;
+}
+
+.product-bottom span {
+  color: var(--gray);
+  font-size: 10px;
+}
+
+.product-bottom a {
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.no-results {
+  padding: 30px 0;
+  color: var(--gray);
+}
+
+.catalog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #ddd;
+}
+
+.catalog-footer p {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.button-black {
+  background: var(--black);
+  color: white;
+}
+
+.red-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 55px 8%;
+  background: var(--red);
+  color: white;
+}
+
+.red-banner h2 {
+  margin-bottom: 0;
+}
+
+.button-white {
+  flex-shrink: 0;
+  background: white;
+  color: var(--black);
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  background: var(--light);
+}
+
+.contact-card {
+  display: flex;
+  gap: 18px;
+  padding: 28px;
+  background: white;
+  border: 1px solid #e4e4e4;
+}
+
+.contact-symbol {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  background: var(--red);
+  color: white;
+  font-size: 22px;
+}
+
+.contact-card small {
+  color: var(--gray);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.contact-card h3 {
+  margin: 8px 0;
+  font-size: 29px;
+}
+
+.contact-card p {
+  color: var(--gray);
+  font-size: 12px;
+}
+
+footer {
+  padding: 40px 8% 18px;
+  background: #101010;
+  color: white;
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding-bottom: 30px;
+}
+
+.footer-logo .logo-icon {
+  background: white;
+  color: #111;
+}
+
+.footer-main p {
+  color: #aaa;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  color: #ccc;
+  font-size: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 17px;
+  border-top: 1px solid #333;
+  color: #888;
+  font-size: 9px;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 18px;
+  border-radius: 30px;
+  background: #20bd5a;
+  color: white;
+  box-shadow: 0 6px 22px #0003;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.floating-whatsapp span {
+  font-size: 18px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 950px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .header {
+    padding: 0 4%;
+  }
+
+  nav {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .header {
+    min-height: 70px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 15px 22px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: white;
+    border-bottom: 1px solid #ddd;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  nav a {
+    padding: 14px 5px;
+  }
+
+  nav .nav-button {
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 580px;
+    padding: 60px 7%;
+    background-position: center;
+  }
+
+  h1 {
+    font-size: clamp(50px, 13vw, 72px);
+  }
+
+  .hero-details {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 38px;
+  }
+
+  .section {
+    padding: 65px 7%;
+  }
+
+  .about,
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-text {
+    padding-top: 0;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters select {
+    width: 100%;
+  }
+
+  .product-grid {
+    gap: 10px;
+  }
+
+  .product-image {
+    height: 140px;
+  }
+
+  .product-info {
+    padding: 12px 10px;
+  }
+
+  .product-info h3 {
+    font-size: 12px;
+  }
+
+  .product-info p {
+    min-height: 60px;
+    font-size: 9px;
+  }
+
+  .catalog-footer,
+  .red-banner,
+  .footer-main,
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .red-banner {
+    padding: 45px 7%;
+  }
+
+  .contact-card {
+    padding: 20px 15px;
+  }
+
+  footer {
+    padding: 35px 7% 18px;
+  }
+}
+/*
+  NASCIMENTO VENDAS
+  Configure o WhatsApp e os produtos nesta área.
+*/
+
+// Troque pelo número real: 55 + DDD + número, sem espaços ou símbolos.
+const WHATSAPP = "5548999999999";
+
+// Mantive a frase solicitada nas mensagens de orçamento.
+const MENSAGEM_GERAL =
+  "Olá gostaria de fazer orçamento. Não apague essa mensagem.";
+
+// Edite os nomes, descrições e fotos nesta lista.
+const PRODUTOS = [
+  {
+    nome: "Acoplamento elástico de garras",
+    categoria: "Acoplamentos",
+    descricao: "Consulte modelos, medidas e configurações disponíveis.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Acoplamento",
+    mensagem: "Olá gostaria de fazer orçamento para acoplamento elástico de garras. Não apague essa mensagem."
+  },
+  {
+    nome: "Acoplamento AG / CG / E",
+    categoria: "Acoplamentos",
+    descricao: "Consulte tamanhos e especificações para sua aplicação.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Acoplamento+AG",
+    mensagem: "Olá gostaria de fazer orçamento para acoplamento AG / CG / E. Não apague essa mensagem."
+  },
+  {
+    nome: "Acoplamento tamanho 67",
+    categoria: "Acoplamentos",
+    descricao: "Informe o furo, a chaveta e as medidas necessárias.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Acoplamento+67",
+    mensagem: "Olá gostaria de fazer orçamento para acoplamento tamanho 67. Não apague essa mensagem."
+  },
+  {
+    nome: "Acoplamento tamanho 82",
+    categoria: "Acoplamentos",
+    descricao: "Consulte a disponibilidade e a compatibilidade.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Acoplamento+82",
+    mensagem: "Olá gostaria de fazer orçamento para acoplamento tamanho 82. Não apague essa mensagem."
+  },
+  {
+    nome: "Mancais industriais",
+    categoria: "Mancais",
+    descricao: "Consulte modelos e dimensões disponíveis.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Mancais",
+    mensagem: "Olá gostaria de fazer orçamento para mancais industriais. Não apague essa mensagem."
+  },
+  {
+    nome: "Polias industriais",
+    categoria: "Polias",
+    descricao: "Consulte o perfil, o diâmetro e as medidas.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Polias",
+    mensagem: "Olá gostaria de fazer orçamento para polias industriais. Não apague essa mensagem."
+  },
+  {
+    nome: "Roletes",
+    categoria: "Roletes",
+    descricao: "Consulte as medidas e a aplicação do equipamento.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Roletes",
+    mensagem: "Olá gostaria de fazer orçamento para roletes. Não apague essa mensagem."
+  },
+  {
+    nome: "Peças sob consulta",
+    categoria: "Mancais",
+    descricao: "Envie uma foto, modelo ou medida para consultar.",
+    foto: "https://placehold.co/700x500/f1f1ef/222222?text=Consulte-nos",
+    mensagem: "Olá gostaria de fazer orçamento de uma peça. Vou enviar os detalhes. Não apague essa mensagem."
+  }
+];
+
+const grade = document.getElementById("productGrid");
+const busca = document.getElementById("search");
+const categoria = document.getElementById("category");
+const semResultados = document.getElementById("noResults");
+
+function linkWhatsApp(mensagem) {
+  const numero = WHATSAPP.replace(/\D/g, "");
+  return `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+}
+
+function textoSeguro(texto) {
+  return String(texto).replace(/[&<>"']/g, caractere => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[caractere]);
+}
+
+function mostrarProdutos() {
+  const termo = busca.value.trim().toLocaleLowerCase("pt-BR");
+  const filtro = categoria.value;
+
+  const encontrados = PRODUTOS.filter(produto => {
+    const texto = (
+      produto.nome + " " +
+      produto.categoria + " " +
+      produto.descricao
+    ).toLocaleLowerCase("pt-BR");
+
+    return texto.includes(termo) &&
+      (!filtro || produto.categoria === filtro);
+  });
+
+  grade.innerHTML = encontrados.map(produto => `
+    <article class="product-card">
+      <div class="product-image">
+        <img
+          src="${textoSeguro(produto.foto)}"
+          alt="${textoSeguro(produto.nome)}"
+          loading="lazy"
+          onerror="this.onerror=null;this.src='https://placehold.co/700x500/f1f1ef/222222?text=Foto+do+produto';"
+        >
+        <span class="product-category">
+          ${textoSeguro(produto.categoria)}
+        </span>
+      </div>
+
+      <div class="product-info">
+        <h3>${textoSeguro(produto.nome)}</h3>
+        <p>${textoSeguro(produto.descricao)}</p>
+
+        <div class="product-bottom">
+          <span>Preço sob consulta</span>
+          <a href="${linkWhatsApp(produto.mensagem)}"
+             target="_blank" rel="noopener">
+            PEDIR ORÇAMENTO ↗
+          </a>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  semResultados.hidden = encontrados.length > 0;
+}
+
+busca.addEventListener("input", mostrarProdutos);
+categoria.addEventListener("change", mostrarProdutos);
+
+// Links de orçamento geral.
+[
+  "generalQuote",
+  "bannerQuote",
+  "contactQuote",
+  "floatingQuote"
+].forEach(id => {
+  const link = document.getElementById(id);
+  link.href = linkWhatsApp(MENSAGEM_GERAL);
+  link.target = "_blank";
+  link.rel = "noopener";
+});
+
+// Menu para celular.
+const botaoMenu = document.getElementById("menuButton");
+const menu = document.getElementById("menu");
+
+botaoMenu.addEventListener("click", () => {
+  menu.classList.toggle("open");
+  botaoMenu.textContent = menu.classList.contains("open") ? "×" : "☰";
+});
+
+menu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("open");
+    botaoMenu.textContent = "☰";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+mostrarProdutos();
